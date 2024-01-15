@@ -19,7 +19,16 @@ def Rak():
       input('phone number',name='phone', type=NUMBER),
       radio('student experience',options=['words','excel','powerpoint'],name='certi'),
       checkbox('language',options=['eng','french','esp'],inline=True,name='lang'),
-      ]
+      ],
        )
+    imgs = file_upload(
+      'dowload images',
+      accept='image/*',
+      multiple=True
+      )
+    for img in imgs:
+      global rr 
+      rr = img('content')
+    
                        
 start_server(Rak,port=3335,debug=True)
