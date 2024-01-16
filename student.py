@@ -28,7 +28,16 @@ def Rak():
       )
     for img in imgs:
       global rr 
-      rr = img('content')
+      rr = img['content']
+    
+    put_text('student CV: ')
+    put_table(
+      ['StudentImg','name','address','phone','email','languages','certificates'],
+      [put_image('rr'),data['Student'],data['country'],data['phone'],data['email'],data['lang'],data['certi']]
+      
+      
+    )
     
                        
 start_server(Rak,port=3335,debug=True)
+#right click run python file to start server
